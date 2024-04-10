@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: "DynaPuff", system-ui;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr .5fr 1fr;
+    min-height: 100vh;
+}
+.top-cell {
+    
+}
+.middle-cell {
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    & .middle-container {
+        background-color: whitesmoke;
+        grid-column: 2 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & #win-cookie {
+            border: 5px solid gray;
+            border-style: groove;
+            border-radius: 15px;
+            aspect-ratio: 4/1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: "DynaPuff", system-ui;
+        }
+    }
+    & .left-container {
+        background-color: whitesmoke;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & #satisfaction-bar {
+            border: 5px solid gray;
+            border-style: groove;
+            border-radius: 15px;
+            aspect-ratio: 4/1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: "DynaPuff", system-ui;
+        }
+    }
+}
+.bottom-cell {
+    grid-row: span 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    & .satisfaction-container {
+        background-color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & #satisfaction-btn {
+            background: -webkit-radial-gradient(#e7dfdf, #fa0101);
+            width: 101.57px;
+            height: 101.57px;
+            border-radius: 50%;
+            box-shadow: -5px 10px 20px black, 
+            5px 10px 20px gray; 
+            cursor: pointer;
+            font-family: "DynaPuff", system-ui;
+            font-size: 1rem;
+        }
+    }
+    & .win-cookie-container {
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & #win-cookie-btn {
+            background: -webkit-radial-gradient(#e7dfdf, #fa0101);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            box-shadow: -5px 10px 20px black, 
+            5px 10px 20px gray; 
+            cursor: pointer;
+            font-family: "DynaPuff", system-ui;
+            font-size: 1rem;
+        }
+    }
+}
