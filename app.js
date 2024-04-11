@@ -23,20 +23,20 @@ function satisfactionBarMessage(){
         case 4:
             satisfactionBarDisplay.value = satisfactionLevel[0];
             break;
-        case 6:
+        case 8:
             satisfactionBarDisplay.value = satisfactionLevel[1];
             break;
-        case 8:
+        case 12:
             satisfactionBarDisplay.value = satisfactionLevel[2];
             break;
-        case 12:
+        case 16:
             satisfactionBarDisplay.value = satisfactionLevel[3];
             break;
-        case 16:
+        case 20:
             satisfactionBarDisplay.value = satisfactionLevel[4];
             break;
         default:
-            if(cookies.length >= 17){
+            if(cookies.length >= 21){
                 satisfactionBarDisplay.value = "Stop Eating!";
             }else{
                 satisfactionBarDisplay.value = "Keep Eating!";
