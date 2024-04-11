@@ -16,7 +16,7 @@ const gameWinContainer = document.querySelector("#right-text");
 const playAgainBtn = document.createElement("button");
 
 const rightTextContainer = document.querySelector("#right-text");
-console.dir(rightTextContainer)
+
 //--------------- Variables ----------------\\
 let cookies = [];
 let satisfactionLevel = ["Very Hungry!", "Hungry", "Small Portion Please!", "I'm Stuffed!", "I'm at my Limit!"];
@@ -42,6 +42,7 @@ function satisfactionBarMessage(){
         default:
             if(cookies.length >= 21){
                 satisfactionBarDisplay.value = "Stop Eating!";
+                satisfactionBarDisplay.style.color = "red";
             }else{
                 satisfactionBarDisplay.value = "Keep Eating!";
             }
@@ -53,16 +54,13 @@ function handleCookieBtnClick(){
     winCookieDisplay.value = `You won ${cookies.length + 1} Cookies!`;
     satisfactionBarDisplay.value = `Eat the Cookie!`;
     cookies.push({food: "snack",type: "cookie",})
-
     gameStartAnimation();
-
-    if(cookies.length >= 20){
+    if(cookies.length >= 21){
         gameWinAnimation();
         displayPlayAgainBtn();
         winCookieBtn.removeEventListener("click", handleCookieBtnClick);
         rightTextContainer.classList.remove("animation")
     }
-    
 }
 
 function handleSatisfactionBtnClick(){

@@ -18,7 +18,7 @@ body {
 @keyframes animation {
     0%   { background-color: whitesmoke;}
     25%  { background-color: gray;}
-    50%  { background-color: black;}
+    50%  { background-color: darkgray;}
     75%  { background-color: gray;}
     100% { background-color: whitesmoke;}
 }
@@ -222,19 +222,23 @@ body {
 }
 
 @media (max-width: 1600px){
-    .top-cell{
-        display: grid;
-        grid-template-columns: 1fr 1fr 0;
+.top-cell{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0;
+}
+.image-container{
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    & img {
+        width: 500px;
+        height: 400px;
     }
-    .image-container{
-        display: flex;
-        align-items: center;
-        & img {
-            width: 500px;
-            height: 400px;
-        }
+}
+    img {
+        display: none;
+    
     }
-
 }
 
 @media (max-width: 1020px){
@@ -246,9 +250,8 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        
     }
-    #right-text, img {
+    img {
         display: none;
     }
     .right-container {
