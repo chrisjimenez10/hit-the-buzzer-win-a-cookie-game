@@ -110,11 +110,9 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     & .satisfaction-container {
-        background-color: whitesmoke;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: black;
         & #satisfaction-btn {
             background: -webkit-radial-gradient(white, rgb(245, 191, 13));
             width: 200px;
@@ -136,11 +134,9 @@ body {
         } 
     }
     & .win-cookie-container {
-        background-color: whitesmoke;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: black;
         & #win-cookie-btn {
             background: -webkit-radial-gradient(white, brown);
             width: 200px;
@@ -162,7 +158,7 @@ body {
         }
     }
     & .bottom-right-container {
-        background-color: black;
+       
     }
 }
 
@@ -196,6 +192,9 @@ body {
     #right-text, img {
         display: none;
     }
+    .right-container {
+        display: none;
+    }
 }
 
 @media (max-width: 665px) {
@@ -204,5 +203,11 @@ body {
     }
     .bottom-cell {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 350px) {
+    .bottom-cell {
+        background: -webkit-radial-gradient(circle, white, gray, black);
     }
 }
