@@ -7,19 +7,19 @@ const satisfactionBtn = document.getElementById("satisfaction-btn");
 
 const satisfactionBarDisplay = document.getElementById("satisfaction-bar");
 
-const bottomCell = document.querySelector(".bottom-cell");
-
 const cookieJarIcon = document.getElementById("jar");
 
 const cookieJarDisplay = document.getElementById("cookie-jar-display");
+
+const gameWinContainer = document.querySelector("#right-text");
+
+const playAgainBtn = document.createElement("button"); //play again button
 
 //--------------- Variables ----------------\\
 let cookies = [];
 let satisfactionLevel = ["Very Hungry!", "Hungry", "Small Portion Please!", "I'm Stuffed!", "I'm at my Limit!"];
 
-
-
-//--------------- Functions ---------------\\
+//-------------------------------------- Functions --------------------------------------\\
 function satisfactionBarMessage(){
     switch(cookies.length){
         case 4:
@@ -50,9 +50,10 @@ function satisfactionBarMessage(){
 function handleCookieBtnClick(){
     winCookieDisplay.value = "You won a Cookie!";
     cookies.push({food: "snack",type: "cookie",})
-    
+    console.log(cookies); // Check if cookies array resets cookie count and allow win condition to occur after "Play Again" is clicked
     if(cookies.length >= 20){
         gameWinAnimation();
+        displayPlayAgainBtn();
         winCookieBtn.removeEventListener("click", handleCookieBtnClick);
     }
 }
@@ -65,9 +66,30 @@ function handleCookieJar(){
     cookieJarDisplay.value = `You have ${cookies.length} cookies!`;
 }
 
+function displayPlayAgainBtn(){
+    playAgainBtn.textContent = "Play Again";
+    playAgainBtn.setAttribute("id", "play-again-btn");
+    gameWinContainer.appendChild(playAgainBtn); 
+}
 
-//---- Event Listeners ----\\
-satisfactionBtn.addEventListener("click", handleSatisfactionBtnClick);
+function gameWinAnimation(){
+    const gameWinText = document.createElement("h1");
+    gameWinText.textContent = `Congratulations, You Fed your Hunger and Won!`;
+    gameWinContainer.appendChild(gameWinText);
+}
+
+function resetGame(){
+    winCookieBtn.addEventListener("click", handleCookieBtnClick);
+    gameWinContainer.textContent = "";
+    satisfactionBarDisplay.value = "Satisfaction Level";
+    winCookieDisplay.value = "Win a Cookie Message!";
+    cookies = [];
+    console.log(cookies);
+}
+
+
+//--------------- Event Listeners ----------------\\
+satisfactionBtn.addEventListener("mouseover", handleSatisfactionBtnClick);
 
 winCookieBtn.addEventListener("click", handleCookieBtnClick);
 
@@ -77,18 +99,8 @@ cookieJarIcon.addEventListener("mouseout", ()=>{
     cookieJarDisplay.value = `Cookies Inside Jar!`;
 });
 
+playAgainBtn.addEventListener("click", resetGame);
 
-//--------------- Game Winning Animation ---------------\\
-function gameWinAnimation(){
-    const gameWinContainer = document.querySelector("#right-text");
-    const gameWinText = document.createElement("h1");
-    gameWinText.textContent = `Congratulations, You Fed your Hunger and Won!`;
-    gameWinContainer.appendChild(gameWinText);
-}
-
-function resetGame(){
-    
-}
 
 
 

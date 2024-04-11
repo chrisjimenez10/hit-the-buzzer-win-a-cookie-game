@@ -29,6 +29,17 @@ body {
         align-items: center;
         padding: 50px;
         line-height: 40px;
+        & #play-again-btn{
+            background: -webkit-radial-gradient(white, rgb(7, 56, 218));
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: -5px 10px 20px black, 
+            5px 10px 20px gray; 
+            cursor: pointer;
+            font-family: "DynaPuff", system-ui;
+            font-size: 2rem;
+        }
     }
     & .image-container {
         display: flex;
