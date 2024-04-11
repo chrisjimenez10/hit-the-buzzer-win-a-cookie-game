@@ -13,8 +13,10 @@ const cookieJarDisplay = document.getElementById("cookie-jar-display");
 
 const gameWinContainer = document.querySelector("#right-text");
 
-const playAgainBtn = document.createElement("button"); //play again button
+const playAgainBtn = document.createElement("button");
 
+const rightTextContainer = document.querySelector("#right-text");
+console.dir(rightTextContainer)
 //--------------- Variables ----------------\\
 let cookies = [];
 let satisfactionLevel = ["Very Hungry!", "Hungry", "Small Portion Please!", "I'm Stuffed!", "I'm at my Limit!"];
@@ -48,14 +50,19 @@ function satisfactionBarMessage(){
     }
  
 function handleCookieBtnClick(){
-    winCookieDisplay.value = "You won a Cookie!";
+    winCookieDisplay.value = `You won ${cookies.length + 1} Cookies!`;
+    satisfactionBarDisplay.value = `Eat the Cookie!`;
     cookies.push({food: "snack",type: "cookie",})
-    console.log(cookies); // Check if cookies array resets cookie count and allow win condition to occur after "Play Again" is clicked
+
+    gameStartAnimation();
+
     if(cookies.length >= 20){
         gameWinAnimation();
         displayPlayAgainBtn();
         winCookieBtn.removeEventListener("click", handleCookieBtnClick);
+        rightTextContainer.classList.remove("animation")
     }
+    
 }
 
 function handleSatisfactionBtnClick(){
@@ -87,6 +94,9 @@ function resetGame(){
     console.log(cookies);
 }
 
+function gameStartAnimation(){
+    rightTextContainer.classList.add("animation");
+}
 
 //--------------- Event Listeners ----------------\\
 satisfactionBtn.addEventListener("mouseover", handleSatisfactionBtnClick);
@@ -100,8 +110,6 @@ cookieJarIcon.addEventListener("mouseout", ()=>{
 });
 
 playAgainBtn.addEventListener("click", resetGame);
-
-
 
 
 

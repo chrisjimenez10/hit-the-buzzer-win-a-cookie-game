@@ -11,8 +11,8 @@
 ###   + Practice developing a project and simulating the process from idea conception to project deployment
 ## Resource Help
 ### Chat GPT
-#### * Missing break; after each case execution, so searched "explain to me the switch statement JavaScript
-#### * 
+#### * I was missing a break; after each case execution, so searched "explain to me the switch statement JavaScript"
+#### * Read documentation on Canvas API, CSS animation property, CSS z-index property,
 ## Future Features
 ### * Create a time limit clock
 ### * Create a confetti or other type of animation upon reaching game winning condition 
