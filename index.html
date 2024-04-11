@@ -6,6 +6,7 @@
     <title>Game: Hit the Buzzer and Win a Cookie</title>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="app.js"></script>
+    <script src="https://kit.fontawesome.com/81f27cd803.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="grid">
@@ -17,7 +18,9 @@
             <div class="image-container">
                 <img src="https://content.wfmynews2.com/photo/2016/11/01/Cookie%20Monster%20USAT_1478046170218_6692962_ver1.0.JPG" alt="Cookie Monster"/>
             </div>
-            <section id="right-text"></section>
+            <section id="right-text">
+                
+            </section>
         </div>
         <div class="middle-cell">
             <div class="middle-container">
@@ -26,7 +29,9 @@
             <div class="left-container">
                 <input id="satisfaction-bar"  type="text" placeholder="Satisfaction Level" readonly>
             </div>
-            <div class="right-container"></div>
+            <div class="right-container">
+                <input id="cookie-jar-display" type="text" placeholder="Cookies Inside Jar!" readonly>
+            </div>
         </div>
         <div class="bottom-cell">
             <div class="satisfaction-container">
@@ -35,7 +40,9 @@
             <div class="win-cookie-container">
                 <button id="win-cookie-btn">Win Cookie</button>
             </div>
-            <div class="bottom-right-container"></div>
+            <div class="bottom-right-container">
+                <i class="fa-solid fa-jar fa-bounce fa-10x" style="--fa-primary-color: #050505; --fa-secondary-color: #f9f5f5;" id="jar"></i>
+            </div>
         </div>
     </div>
 </body>
