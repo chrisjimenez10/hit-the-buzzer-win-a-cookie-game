@@ -114,7 +114,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: -webkit-radial-gradient(circle, white, gray, black);
+        background-color: black;
         & #satisfaction-btn {
             background: -webkit-radial-gradient(white, rgb(245, 191, 13));
             width: 200px;
@@ -140,7 +140,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: -webkit-radial-gradient(circle, white, gray, black);
+        background-color: black;
         & #win-cookie-btn {
             background: -webkit-radial-gradient(white, brown);
             width: 200px;
@@ -162,7 +162,7 @@ body {
         }
     }
     & .bottom-right-container {
-        background: -webkit-radial-gradient(circle, white, gray, black);
+        background-color: black;
     }
 }
 
