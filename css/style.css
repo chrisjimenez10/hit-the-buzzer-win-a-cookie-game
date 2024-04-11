@@ -40,6 +40,13 @@ body {
             font-family: "DynaPuff", system-ui;
             font-size: 2rem;
         }
+        & #play-again-btn:hover {
+            transform: scale(1.15);
+        }
+        & #play-again-btn:active {
+            transform: scale(1.25);
+            transition: 200ms;
+        }
     }
     & .image-container {
         display: flex;
