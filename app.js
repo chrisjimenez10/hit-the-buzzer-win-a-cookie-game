@@ -51,6 +51,8 @@ function satisfactionBarMessage(){
     }
  
 function handleCookieBtnClick(){
+    winCookieDisplay.style.transform = "scale(1.4)";
+    setTimeout(displaySize, 500);
     winCookieDisplay.value = `You won ${cookies.length + 1} Cookies!`;
     satisfactionBarDisplay.value = `Eat the Cookie!`;
     cookies.push({food: "snack",type: "cookie",})
@@ -83,6 +85,10 @@ function gameWinAnimation(){
     gameWinContainer.appendChild(gameWinText);
 }
 
+function displaySize(){
+    winCookieDisplay.style.transform = "scale(1)";
+}
+
 function resetGame(){
     winCookieBtn.addEventListener("click", handleCookieBtnClick);
     gameWinContainer.textContent = "";
@@ -108,6 +114,7 @@ cookieJarIcon.addEventListener("mouseout", ()=>{
 });
 
 playAgainBtn.addEventListener("click", resetGame);
+
 
 
 
