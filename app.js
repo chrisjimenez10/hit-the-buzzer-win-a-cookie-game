@@ -89,7 +89,7 @@ function resetGame(){
     satisfactionBarDisplay.value = "Satisfaction Level";
     winCookieDisplay.value = "Win a Cookie Message!";
     cookies = [];
-    console.log(cookies);
+    satisfactionBarDisplay.style.color = "initial";
 }
 
 function gameStartAnimation(){
