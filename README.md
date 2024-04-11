@@ -9,4 +9,8 @@
 ###  - + CSS Grid, Flexbox, and other styles and techniques learned from outsource research
 ###  - + HTML practice from lecture lessons and outsource research
 ###  - + Practice developing a project and simulating the process from idea conception to project deployment
+## Resource Help
+### Chat GPT
+#### * Missing break; after each case execution, so searched "explain to me the switch statement JavaScript
+#### *  
 
