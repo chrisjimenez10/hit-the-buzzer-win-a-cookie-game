@@ -115,9 +115,10 @@ body {
             border: 5px solid gray;
             border-style: groove;
             border-radius: 15px;
-            aspect-ratio: 4/1;
+            width: 450px;
+            height: 50px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-family: "DynaPuff", system-ui;
         }
     }
@@ -134,9 +135,10 @@ body {
             border: 5px solid gray;
             border-style: groove;
             border-radius: 15px;
-            aspect-ratio: 4/1;
+            width: 400px;
+            height: 50px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-family: "DynaPuff", system-ui;
         }
     }
@@ -152,7 +154,8 @@ body {
             border: 5px solid gray;
             border-style: groove;
             border-radius: 15px;
-            aspect-ratio: 4/1;
+            width: 450px;
+            height: 50px;
             text-align: center;
             font-size: 1.5rem;
             font-family: "DynaPuff", system-ui;
@@ -178,14 +181,9 @@ body {
             font-family: "DynaPuff", system-ui;
             font-size: 1.7rem;
         }
-        
         & #satisfaction-btn:hover {
             transform: scale(1.15);
         }
-        & #satisfaction-btn:active {
-            transform: scale(1.25);
-            transition: 200ms;
-        } 
     }
     & .win-cookie-container {
         display: flex;
