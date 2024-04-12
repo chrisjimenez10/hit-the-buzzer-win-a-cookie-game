@@ -20,3 +20,4 @@
 ### * Create a confetti or other type of animation upon reaching game winning condition
 ### * Background music and buzzer sound when clicked 
 
+![Hit the Buzzer Win a Cookie -1](https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/assets/151977901/6e353ba3-7523-47f7-9bb9-36a5c369f61d)
