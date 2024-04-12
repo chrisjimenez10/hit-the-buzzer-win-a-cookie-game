@@ -21,3 +21,4 @@
 ### * Background music and buzzer sound when clicked 
 
 ![Hit the Buzzer Win a Cookie -1](https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/assets/151977901/6e353ba3-7523-47f7-9bb9-36a5c369f61d)
+![Hit the Buzzer Win a Cookie -2](https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/assets/151977901/fc609070-2ffe-4459-ba32-7cdd9dc38e06)
