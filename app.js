@@ -160,7 +160,7 @@ function generateCookie() {
     cookie.generatedMessage(cookie);
     cookie.addFlavorPoints();
     cookie.addShapePoints();
-    console.log(sumOfPoints(flavorPoints, shapePoints));
+    sumOfPoints(flavorPoints, shapePoints);
 }
  
 function handleCookieBtnClick(){
