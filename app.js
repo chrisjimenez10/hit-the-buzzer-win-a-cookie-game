@@ -24,6 +24,10 @@ let flavorPoints = 0;
 
 let shapePoints = 0;
 
+let computerFlavorPoints = 0;
+
+let computerShapePoints = 0;
+
 let satisfactionLevel = ["Very Hungry!", "Hungry", "Small Portion Please!", "I'm Stuffed!", "I'm at my Limit!"];
 
 let flavors = [
@@ -93,6 +97,42 @@ class Cookies {
                 cookieJarDisplay.value = "Error";         
         }
     }
+    addComputerFlavorPoints() {
+        switch (this.flavor) {
+            case flavors[0]:
+                computerFlavorPoints += 3;
+                break;
+            case flavors[1]:
+                computerFlavorPoints += 2;
+                break;
+            case flavors[2]:
+               computerFlavorPoints += 1;
+                break;
+            case flavors[3]:
+                computerFlavorPoints += 3;
+                break;
+            case flavors[4]:
+                computerFlavorPoints += 2;
+                break;
+            case flavors[5]:
+                computerFlavorPoints += 1;
+                break;
+            case flavors[6]:
+                computerFlavorPoints += 1;
+                break;
+            case flavors[7]:
+                computerFlavorPoints += 2;
+                break;
+            case flavors[8]:
+                computerFlavorPoints += 3;
+                break;
+            case flavors[9]:
+                computerFlavorPoints += 1;
+                break;
+            default:
+                rightTextContainer.value = "Error";         
+        }
+    }
     addShapePoints() {
         switch (this.shape) {
             case shapes[0]:
@@ -113,6 +153,27 @@ class Cookies {
             default:
             cookieJarDisplay.value = "Error";   
         }
+    }
+    addComputerShapePoints() {
+        switch (this.shape) {
+            case shapes[0]:
+                computerShapePoints += 1;
+                break;
+            case shapes[1]:
+                computerShapePoints += 4;
+                break;
+            case shapes[2]:
+                computerShapePoints += 2;
+                break;
+            case shapes[3]:
+                computerShapePoints += 1;
+                break;
+            case shapes[4]:
+                computerShapePoints += 2;
+                break;
+            default:
+            rightTextContainer.value = "Error";   
+        }
     }   
 }
 
@@ -121,6 +182,10 @@ class Cookies {
 const sumOfPoints = (flavorPoints, shapePoints)=>{
     score = flavorPoints + shapePoints;
     return score;
+}
+const sumOfComputerPoints = (computerFlavorPoints, computerShapePoints)=>{
+    computerScore = computerFlavorPoints + computerShapePoints;
+    return computerScore;
 }
 
 function satisfactionBarMessage(){
@@ -162,6 +227,19 @@ function generateCookie() {
     cookie.addShapePoints();
     sumOfPoints(flavorPoints, shapePoints);
 }
+
+function computerGeneratedCookie(){
+    let computerCookie;
+    let computerRandomInt1 =  Math.floor(Math.random() * (flavors.length));
+    let computerRandomInt2 =  Math.floor(Math.random() * (shapes.length));
+    computerCookie = new Cookies(flavors[computerRandomInt1], shapes[computerRandomInt2]);
+    console.log(computerCookie); //debug
+    computerCookie.addComputerFlavorPoints();
+    computerCookie.addComputerShapePoints();
+    sumOfComputerPoints(computerFlavorPoints, computerShapePoints);
+    console.log(sumOfComputerPoints(computerFlavorPoints, computerShapePoints)); //debug
+    computerTotalPointsDisplay();
+}
  
 function handleCookieBtnClick(){
     winCookieDisplay.style.transform = "scale(1.2)";
@@ -170,11 +248,13 @@ function handleCookieBtnClick(){
     generateCookie();
     gameStartAnimation();
     cookieJarDisplay.value = `Total Points: ${score}`;
+    computerGeneratedCookie();
     if(cookieJar.length >= 21){
         gameWinAnimation();
         displayPlayAgainBtn();
         winCookieBtn.removeEventListener("click", handleCookieBtnClick);
-        rightTextContainer.classList.remove("animation")
+        rightTextContainer.classList.remove("animation");
+        // console.log(computerScore - score);
     }
 }
 
@@ -196,7 +276,13 @@ function displayPlayAgainBtn(){
 
 function gameWinAnimation(){
     const gameWinText = document.createElement("h1");
-    gameWinText.textContent = `Congratulations, You Fed your Hunger and Won!`;
+    if(computerScore === score){
+        gameWinText.textContent = `It's a Tie! Both You and Cookie Monster made ${score} points - try again!`;
+    }else if(computerScore > score){
+        gameWinText.textContent = `Oh no, You Lost! Cookie Monster made ${computerScore - score} more points than You - Better luck next time!`;
+    }else{
+        gameWinText.textContent = `You Won! You made ${score - computerScore} more points than Cookie Monster, congratulations!`;
+    }
     gameWinContainer.appendChild(gameWinText);
 }
 
@@ -218,10 +304,17 @@ function resetGame(){
     shapePoints = 0;
     cookieJar = [];
     satisfactionBarDisplay.style.color = "initial";
+    computerFlavorPoints = 0;
+    computerShapePoints = 0;
 }
 
 function gameStartAnimation(){
     rightTextContainer.classList.add("animation");
+}
+
+function computerTotalPointsDisplay(){
+    rightTextContainer.style.fontSize = "1.5rem";
+    rightTextContainer.textContent = `Cookie Monster Total Points: ${computerScore}`;
 }
 
 //--------------- Event Listeners ----------------\\
