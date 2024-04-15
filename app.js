@@ -326,7 +326,7 @@ function computerTotalPointsDisplay(){
 }
 
 function winCookieSound(){
-    const winCookieSound = new Audio(`../audio/win-cookie-button.mp3`);
+    const winCookieSound = new Audio(`https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/raw/main/audio/win-cookie-button.mp3`);
     winCookieSound.volume = .2;
     winCookieSound.play();
 }
