@@ -269,7 +269,7 @@ function handleSatisfactionBtnClick(){
 }
 
 function handleCookieJar(){
-    cookieJarDisplay.value = `You have ${cookieJar.length} cookies!`; //point system
+    cookieJarDisplay.value = `You have ${cookieJar.length} cookies!`; 
 }
 
 function displayPlayAgainBtn(){
@@ -349,7 +349,7 @@ satisfactionBtn.addEventListener("mouseover", handleSatisfactionBtnClick);
 
 winCookieBtn.addEventListener("click", handleCookieBtnClick);
 
-cookieJarIcon.addEventListener("mouseover", handleCookieJar); //addition
+cookieJarIcon.addEventListener("mouseover", handleCookieJar); 
 
 cookieJarIcon.addEventListener("mouseout", ()=>{
     cookieJarDisplay.value = `Total Points: ${score}`;
