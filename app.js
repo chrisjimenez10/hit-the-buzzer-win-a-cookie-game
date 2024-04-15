@@ -19,7 +19,7 @@ const rightTextContainer = document.querySelector("#right-text");
 
 const musicButton = document.querySelector("#music");
 
-const backgroundMusic = new Audio(`../audio/background-music.mp3`);
+const backgroundMusic = new Audio(`https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/raw/main/audio/background-music.mp3`);
 
 //--------------- Variables ----------------\\
 let cookieJar = [];
