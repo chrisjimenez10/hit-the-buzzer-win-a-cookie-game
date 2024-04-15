@@ -233,11 +233,9 @@ function computerGeneratedCookie(){
     let computerRandomInt1 =  Math.floor(Math.random() * (flavors.length));
     let computerRandomInt2 =  Math.floor(Math.random() * (shapes.length));
     computerCookie = new Cookies(flavors[computerRandomInt1], shapes[computerRandomInt2]);
-    console.log(computerCookie); //debug
     computerCookie.addComputerFlavorPoints();
     computerCookie.addComputerShapePoints();
     sumOfComputerPoints(computerFlavorPoints, computerShapePoints);
-    console.log(sumOfComputerPoints(computerFlavorPoints, computerShapePoints)); //debug
     computerTotalPointsDisplay();
 }
  
@@ -255,7 +253,6 @@ function handleCookieBtnClick(){
         displayPlayAgainBtn();
         winCookieBtn.removeEventListener("click", handleCookieBtnClick);
         rightTextContainer.classList.remove("animation");
-        // console.log(computerScore - score);
     }
 }
 
@@ -281,7 +278,7 @@ function gameWinAnimation(){
     if(computerScore === score){
         gameWinText.textContent = `It's a Tie! Both You and Cookie Monster made ${score} points - try again!`;
         const tieGame = new Audio(`../audio/tie-game.mp3`);
-        tieGame.volume = .5;
+        tieGame.volume = .4;
         tieGame.play();
     }else if(computerScore > score){
         gameWinText.textContent = `Oh no, You Lost! Cookie Monster made ${computerScore - score} more points than You - Better luck next time!`;
@@ -291,7 +288,7 @@ function gameWinAnimation(){
     }else{
         gameWinText.textContent = `You Won! You made ${score - computerScore} more points than Cookie Monster, congratulations!`;
         const playerWin = new Audio(`../audio/player-win.mp3`);
-        playerWin.volume = .7;
+        playerWin.volume = .4;
         playerWin.play();
     }
     gameWinContainer.appendChild(gameWinText);
