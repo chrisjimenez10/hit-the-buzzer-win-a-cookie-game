@@ -17,6 +17,10 @@ const playAgainBtn = document.createElement("button");
 
 const rightTextContainer = document.querySelector("#right-text");
 
+const musicButton = document.querySelector("#music");
+
+const backgroundMusic = new Audio(`../audio/background-music.mp3`);
+
 //--------------- Variables ----------------\\
 let cookieJar = [];
 
@@ -253,6 +257,7 @@ function handleCookieBtnClick(){
         displayPlayAgainBtn();
         winCookieBtn.removeEventListener("click", handleCookieBtnClick);
         rightTextContainer.classList.remove("animation");
+        backgroundMusic.muted = true;
     }
 }
 
@@ -314,6 +319,7 @@ function resetGame(){
     satisfactionBarDisplay.style.color = "initial";
     computerFlavorPoints = 0;
     computerShapePoints = 0;
+    backgroundMusic.muted = false;
 }
 
 function gameStartAnimation(){
@@ -351,6 +357,15 @@ cookieJarIcon.addEventListener("mouseout", ()=>{
 
 playAgainBtn.addEventListener("click", resetGame);
 
-
+musicButton.addEventListener("click", ()=>{
+    backgroundMusic.volume = .1;
+    backgroundMusic.play();
+    backgroundMusic.loop = true;
+    if(backgroundMusic.muted === false){
+        backgroundMusic.muted = true;
+    }else{
+        backgroundMusic.muted = false;
+    }
+})
 
 

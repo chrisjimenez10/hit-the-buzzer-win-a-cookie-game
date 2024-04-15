@@ -68,6 +68,7 @@ body {
     }
     & .image-container {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         & img {
@@ -78,6 +79,19 @@ body {
             margin: 10px;
             width: 425px;
             height: 350px;
+        }
+        & #music {
+            border-radius: 15px;
+            font-family: "DynaPuff", system-ui;
+            background-color: whitesmoke;
+            box-shadow: 2px 2px 5px 1px black inset;
+            cursor: pointer;
+        }
+        & #music:hover {
+            transform: scale(1.05);
+        }
+        & #music:active {
+            transform: scale(1.10);
         }
     }
     #left-text {
