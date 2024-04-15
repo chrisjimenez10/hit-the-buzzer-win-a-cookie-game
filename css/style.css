@@ -247,11 +247,6 @@ body {
         display: none;
     }
 }
-<<<<<<< HEAD
-img {
-    display: none;
-}
-=======
 }
 
 @media(max-width: 1390px){
@@ -261,7 +256,6 @@ img {
     .bottom-cell {
         background: -webkit-radial-gradient(circle, white, gray, black);
     }
->>>>>>> multiplayer-feature
 }
 
 @media (max-width: 1020px){
