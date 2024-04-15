@@ -4,9 +4,9 @@
 ###    1. Click the "Win a Cookie" button to win a cookie
 ###    2. Hover over the "Satisfaction" button to eat your earned cookies
 ###    3. You can only get up to 21 cookies
-###    4. Each cookie has a flavor and shape and are assigned a point value (i.e.      chocolate is 3 points, round is 1 point),so try to earn the highest point combination and beat Cookie Monster as he also generates random cookies with you
-###    6. Game will end at cookie number 21 and the game winner is decided based on the points they accumulated
-###    7. Play again by clicking "Play Again" button
+###    4. Each cookie has a flavor and shape and are assigned a point value (i.e. chocolate is 3 points, round is 1 point),so try to earn the highest point combination and beat Cookie Monster as he also generates random cookies with you
+###    5. Game will end at cookie number 21 and the game winner is decided based on the points they accumulated
+###    6. Play again by clicking "Play Again" button
 ##   Programming Objectives
 ###   + JavaScript DOM Manipulation
 ###   + CSS Grid, Flexbox, and other styles and techniques learned from outsource research
