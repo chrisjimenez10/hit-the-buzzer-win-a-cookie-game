@@ -247,10 +247,9 @@ body {
         height: 400px;
     }
 }
-    img {
-        display: none;
-    
-    }
+img {
+    display: none;
+}
 }
 
 @media (max-width: 1020px){
