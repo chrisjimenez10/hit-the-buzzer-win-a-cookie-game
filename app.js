@@ -249,6 +249,7 @@ function handleCookieBtnClick(){
     gameStartAnimation();
     cookieJarDisplay.value = `Total Points: ${score}`;
     computerGeneratedCookie();
+    winCookieSound();
     if(cookieJar.length >= 21){
         gameWinAnimation();
         displayPlayAgainBtn();
@@ -315,6 +316,12 @@ function gameStartAnimation(){
 function computerTotalPointsDisplay(){
     rightTextContainer.style.fontSize = "1.5rem";
     rightTextContainer.textContent = `Cookie Monster Total Points: ${computerScore}`;
+}
+
+function winCookieSound(){
+    const winCookieSound = new Audio(`../win-cookie-button.mp3`);
+    winCookieSound.volume = .5;
+    winCookieSound.play();
 }
 
 //--------------- Event Listeners ----------------\\
