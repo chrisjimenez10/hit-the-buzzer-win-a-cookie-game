@@ -262,6 +262,7 @@ function handleCookieBtnClick(){
 function handleSatisfactionBtnClick(){
     satisfactionBarDisplay.style.transform = "scale(1.2)";
     satisfactionBarMessage();
+    eatCookieSound();
     setTimeout(satisfactionDisplaySize, 500);
 }
 
@@ -279,10 +280,19 @@ function gameWinAnimation(){
     const gameWinText = document.createElement("h1");
     if(computerScore === score){
         gameWinText.textContent = `It's a Tie! Both You and Cookie Monster made ${score} points - try again!`;
+        const tieGame = new Audio(`../audio/tie-game.mp3`);
+        tieGame.volume = .5;
+        tieGame.play();
     }else if(computerScore > score){
         gameWinText.textContent = `Oh no, You Lost! Cookie Monster made ${computerScore - score} more points than You - Better luck next time!`;
+        const cookieMonsterSound = new Audio(`../audio/cookie-monster-sound.mp3`);
+        cookieMonsterSound.volume = 1;
+        cookieMonsterSound.play();
     }else{
         gameWinText.textContent = `You Won! You made ${score - computerScore} more points than Cookie Monster, congratulations!`;
+        const playerWin = new Audio(`../audio/player-win.mp3`);
+        playerWin.volume = .7;
+        playerWin.play();
     }
     gameWinContainer.appendChild(gameWinText);
 }
@@ -319,9 +329,16 @@ function computerTotalPointsDisplay(){
 }
 
 function winCookieSound(){
-    const winCookieSound = new Audio(`../win-cookie-button.mp3`);
-    winCookieSound.volume = .5;
+    const winCookieSound = new Audio(`../audio/win-cookie-button.mp3`);
+    winCookieSound.volume = .2;
     winCookieSound.play();
+}
+
+function eatCookieSound(){
+    const eatCookieSound = new Audio(`../audio/eating-cookie.mp3`);
+    eatCookieSound.volume = .2;
+    eatCookieSound.currentTime = 5.5;
+    eatCookieSound.play();
 }
 
 //--------------- Event Listeners ----------------\\
