@@ -277,17 +277,17 @@ function gameWinAnimation(){
     const gameWinText = document.createElement("h1");
     if(computerScore === score){
         gameWinText.textContent = `It's a Tie! Both You and Cookie Monster made ${score} points - try again!`;
-        const tieGame = new Audio(`../audio/tie-game.mp3`);
+        const tieGame = new Audio(`https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/raw/main/audio/tie-game.mp3`);
         tieGame.volume = .4;
         tieGame.play();
     }else if(computerScore > score){
         gameWinText.textContent = `Oh no, You Lost! Cookie Monster made ${computerScore - score} more points than You - Better luck next time!`;
-        const cookieMonsterSound = new Audio(`../audio/cookie-monster-sound.mp3`);
+        const cookieMonsterSound = new Audio(`https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/raw/main/audio/cookie-monster-sound.mp3`);
         cookieMonsterSound.volume = 1;
         cookieMonsterSound.play();
     }else{
         gameWinText.textContent = `You Won! You made ${score - computerScore} more points than Cookie Monster, congratulations!`;
-        const playerWin = new Audio(`../audio/player-win.mp3`);
+        const playerWin = new Audio(`https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/raw/main/audio/player-win.mp3`);
         playerWin.volume = .4;
         playerWin.play();
     }
@@ -332,7 +332,7 @@ function winCookieSound(){
 }
 
 function eatCookieSound(){
-    const eatCookieSound = new Audio(`../audio/eating-cookie.mp3`);
+    const eatCookieSound = new Audio(`https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/raw/main/audio/eating-cookie.mp3`);
     eatCookieSound.volume = .2;
     eatCookieSound.currentTime = 5.5;
     eatCookieSound.play();
