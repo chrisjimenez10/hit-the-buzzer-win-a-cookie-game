@@ -59,9 +59,11 @@ class Cookies {
         this.flavor = flavor;
         this.shape = shape;
     }
+    //Add user generated cookie to cookie jar array
     addToJar(entry) {
         cookieJar.push(entry);
     }
+    //Display message after user generates and "wins" a cookie
     generatedMessage() {
         winCookieDisplay.value = `You won a ${this.flavor} ${this.shape} cookie`;
     }
@@ -183,6 +185,7 @@ class Cookies {
 
 
 //-------------------------------------- Functions --------------------------------------\\
+    //Functions to add the ponits from each cookie property
 const sumOfPoints = (flavorPoints, shapePoints)=>{
     score = flavorPoints + shapePoints;
     return score;
@@ -191,7 +194,7 @@ const sumOfComputerPoints = (computerFlavorPoints, computerShapePoints)=>{
     computerScore = computerFlavorPoints + computerShapePoints;
     return computerScore;
 }
-
+    //Message displayed based on length of cookie jar referencing satisfaction level array
 function satisfactionBarMessage(){
     switch(cookieJar.length){
         case 4:
@@ -210,11 +213,11 @@ function satisfactionBarMessage(){
             satisfactionBarDisplay.value = satisfactionLevel[4];
             break;
         default:
-            if(cookieJar.length >= 21){
+            if(cookieJar.length >= 21){ //Ending display and style after last cookie earned
                 satisfactionBarDisplay.value = "Stop Eating!";
                 satisfactionBarDisplay.style.color = "red";
             }else{
-                satisfactionBarDisplay.value = "Keep Eating!";
+                satisfactionBarDisplay.value = "Keep Eating!"; //display should condition in swith statement NOT be either of the cases
             }
             break;
         }
@@ -222,14 +225,14 @@ function satisfactionBarMessage(){
 
 function generateCookie() {
     let cookie;
-    let randomInt1 = Math.floor(Math.random() * (flavors.length));
+    let randomInt1 = Math.floor(Math.random() * (flavors.length)); //Generating random numbers to represent index value during cookie generation
     let randomInt2 = Math.floor(Math.random() * (shapes.length));
-    cookie = new Cookies(flavors[randomInt1], shapes[randomInt2]);
-    cookie.addToJar(cookie);
+    cookie = new Cookies(flavors[randomInt1], shapes[randomInt2]); //Instance object (cookie) using Cookies Class
+    cookie.addToJar(cookie); //Adding generated cookie to cookieJar array
     cookie.generatedMessage(cookie);
-    cookie.addFlavorPoints();
+    cookie.addFlavorPoints(); //Method in Cookie Class to add the points to the variable (so we can use later inside function that sums both variables)
     cookie.addShapePoints();
-    sumOfPoints(flavorPoints, shapePoints);
+    sumOfPoints(flavorPoints, shapePoints); //Invoking function to sum points for each cookie generated
 }
 
 function computerGeneratedCookie(){
@@ -240,19 +243,19 @@ function computerGeneratedCookie(){
     computerCookie.addComputerFlavorPoints();
     computerCookie.addComputerShapePoints();
     sumOfComputerPoints(computerFlavorPoints, computerShapePoints);
-    computerTotalPointsDisplay();
+    computerTotalPointsDisplay(); //Invoking function that displays computer points total
 }
  
 function handleCookieBtnClick(){
     winCookieDisplay.style.transform = "scale(1.2)";
-    setTimeout(cookieDisplaySize, 500);
+    setTimeout(cookieDisplaySize, 500); //Ensures returning scale size of display input to initial size
     satisfactionBarDisplay.value = `Eat the Cookie!`;
     generateCookie();
-    gameStartAnimation();
+    gameStartAnimation(); //Animation coded in CSS to start the blinking effect 
     cookieJarDisplay.value = `Total Points: ${score}`;
     computerGeneratedCookie();
     winCookieSound();
-    if(cookieJar.length >= 21){
+    if(cookieJar.length >= 21){ //End game actions: stop animation, display reset feature, display winning message with stats, and remove event listener from button to prevent user from clicking and generating cookies
         gameWinAnimation();
         displayPlayAgainBtn();
         winCookieBtn.removeEventListener("click", handleCookieBtnClick);
@@ -269,7 +272,7 @@ function handleSatisfactionBtnClick(){
 }
 
 function handleCookieJar(){
-    cookieJarDisplay.value = `You have ${cookieJar.length} cookies!`; //point system
+    cookieJarDisplay.value = `You have ${cookieJar.length} cookies!`; 
 }
 
 function displayPlayAgainBtn(){
@@ -279,7 +282,7 @@ function displayPlayAgainBtn(){
 }
 
 function gameWinAnimation(){
-    const gameWinText = document.createElement("h1");
+    const gameWinText = document.createElement("h1"); //creating element that displays end game message
     if(computerScore === score){
         gameWinText.textContent = `It's a Tie! Both You and Cookie Monster made ${score} points - try again!`;
         const tieGame = new Audio(`https://github.com/chrisjimenez10/hit-the-buzzer-win-a-cookie-game/raw/main/audio/tie-game.mp3`);
@@ -296,7 +299,7 @@ function gameWinAnimation(){
         playerWin.volume = .4;
         playerWin.play();
     }
-    gameWinContainer.appendChild(gameWinText);
+    gameWinContainer.appendChild(gameWinText); //Appending element onto HTML, so user can see the end game message
 }
 
 function cookieDisplaySize(){
@@ -307,6 +310,7 @@ function satisfactionDisplaySize(){
     satisfactionBarDisplay.style.transform = "scale(1)";
 }
 
+    //Reset feature and re-activating event listener to win cookie button
 function resetGame(){
     winCookieBtn.addEventListener("click", handleCookieBtnClick);
     gameWinContainer.textContent = "";
